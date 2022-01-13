@@ -17,9 +17,14 @@ contract Contest {
     // add a public state variable to keep track of contestant Count
     uint public contestantsCount;
 
+    function ContestFunction() public {
+        addContestant("Mirka");
+        addContestant("Lonia");
+    }
+
 
     // add a function to add contestant
-    function addContestant (string _name) private {
+    function addContestant (string memory _name) private {
         contestantsCount ++;
         contestants[contestantsCount] = Contestant(contestantsCount, _name, 0);
     }
